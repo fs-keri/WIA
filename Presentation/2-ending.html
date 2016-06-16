@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+<!--Keri Ritenour
+	WIA - Presentation
+	June 2016-->
 
 	<head>
 		<meta charset="utf-8">
@@ -16,6 +19,9 @@
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/twentytwenty.css">
+
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/styles/dark.css">
@@ -37,58 +43,117 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-                    <h2> h2 size</h2>
-                    <h6> h6 size</h6>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>TwentyTwenty.js</h1>
 					<p>
-						<strong> This is strong text</strong>
-                        <small>Let's go through it together!</small>
+						<strong>Keri Ritenour</strong>
+						<p>WIA</p>
 					</p>
-                    <font size="1"> Text 1</font>
 				</section>
 				
                 <section>
                 	<section>
-                    	<h2> Vertical Slides</h2>
-                        <p>Slides can be nested inside other slides</p>
-                        <p>Press DOWN!</p>
-                    
+                    	<h3>What happens when you need to compare two images?</h3>
                     </section>
+
                     <section>
-                    	<h2> 2nd Slide</h2>
-                        <p>Press UP or DOWN!</p>
-                    
+                    	<h3>Images are usually placed side by side.</h3>
+                        <img src="images/rsz_keri2.jpg"/>
+						<img src="images/rsz_keri2.png"/>
                     </section>
-                    <section>
-                    	<h2> 3rd Slide</h2>
-                        <p>Press UP!</p>
-                    
-                    </section>
-                
                 </section>
                 
                 <section>
-                	<h2>Unordered list</h2>
+					<h2>So what is TwentyTwenty.js?</h2>
                     <ul>
-                    	<li>No order here</li>
-                        <li>2nd thing</li>
-                        <li>3rd Thing</li>
+						<li>Shows the visual difference between two images</li>
+                    	<li>Brings images into focus, highlighting differences</li>
+						<li>Responsive and functional on all devices</li>
+                        <li>Doesn't require images to work</li>
                     </ul>
-                
                 </section>
+
                 <section>
-                	<h2>Ordered list</h2>
-                    <ol>
-                    	<li>No order here</li>
-                        <li>2nd thing</li>
-                        <li>3rd Thing</li>
-                    </ol>
-                
+                	<section>
+						<h2>How does it work?</h2>
+                    	<ul>
+							<li>Download the plugin <a href="http://zurb.com/playground/twentytwenty" target="_blank">here</a></li>
+							<li>Unzip the twentytwenty-master.zip archive.</li>
+							<li>Copy the 'twentytwenty.css' file and move to your CSS folder. </li>
+							<li>Copy the 'jquery.twentytwenty.js' and 'jquery.event.move.js' files to your JS folder.</li>
+                    	</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li>Attach the css to the top of your HTML file.</li>
+						</ul>
+						<pre><code>
+&lt;head&gt;
+&lt;title&gt;reveal.js - The HTML Presentation Framework&lt;/title&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/reveal.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/theme/default.css&quot; id=&quot;theme&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/twentytwenty.css&quot;&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;lib/css/styles/dark.css&quot;&gt;
+
+&lt;script&gt;
+document.write( '&lt;link rel=&quot;stylesheet&quot; href=&quot;css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css&quot; type=&quot;text/css&quot; media=&quot;print&quot;&gt;' );
+&lt;/script&gt;
+
+&lt;/head&gt;
+                            </code>
+						</pre>
+					</section>
+
+                    <section>
+                        <ul>
+                            <li>Attach the the js files and latest jQuery CDN to the end of your HTML file before the closing body tag.</li>
+                        </ul>
+						<pre><code>
+&lt;script src=&quot;lib/js/head.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/reveal.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://code.jquery.com/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.event.move.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.twentytwenty.js&quot;&gt;&lt;/script&gt;
+                        </code>
+						</pre>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>Place your images in the appropriate folder and embed them inside a <code>&lt;div&gt;</code>within the body of your page.</li>
+                            <li>Adding the CSS class 'twentytwenty-container' is optional for avoiding a Flash Of Unstyled Content (FOUC).</li>
+                            <li>The first image will be the before picture and the second image will be the after picture.</li>
+                        </ul>
+						<pre><code>
+                            &lt;script src=&quot;lib/js/head.min.js&quot;&gt;&lt;/script&gt;
+                            &lt;script src=&quot;js/reveal.min.js&quot;&gt;&lt;/script&gt;
+                            &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+                            &lt;script src=&quot;http://code.jquery.com/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
+                            &lt;script src=&quot;jquery.event.move.js&quot;&gt;&lt;/script&gt;
+                            &lt;script src=&quot;jquery.twentytwenty.js&quot;&gt;&lt;/script&gt;
+                        </code>
+						</pre>
+                    </section>
+
                 </section>
+
                  <section>
-                	<h2>Transtitions</h2>
-                  
+                     <div class="myContainer">
+                         <div id="twentyBox" class="twentytwenty-container">
+                             <img src="images/rsz_keri2.jpg">
+                             <img src="images/rsz_keri2.png">
+                         </div>
+                     </div>
+
+
+
+                     <ol>
+						 <li></li>
+					 </ol>
                     	<p>
                         	cube, default, page, concave, zoom, linear, fade, none
                         	
@@ -213,6 +278,17 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="jquery.event.move.js"></script>
+		<script src="jquery.twentytwenty.js"></script>
+
+        <script>
+            $(window).load(function()
+            {
+                $("#twentyBox").twentytwenty({default_offset_pct: 0.6});
+            })
+        </script>
 
 		<script>
 
@@ -224,7 +300,7 @@
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+				theme: Reveal.getQueryHash().theme || 'moon', // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Optional libraries used to extend on reveal.js
