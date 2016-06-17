@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<!--Keri Ritenour
+	WIA - Presentation
+	June 2016-->
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>WIA Presentation: TwentyTwenty.js</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/style.css">
+
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/styles/dark.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>TwentyTwenty.js</h1>
+					<p>
+						<strong>Keri Ritenour</strong>
+						<p>WIA</p>
+					</p>
+				</section>
+				
+                <section>
+                	<section>
+                    	<h3>What happens when you need to compare two images?</h3>
+                    </section>
+
+                    <section>
+                    	<h3>Images are usually placed side by side.</h3>
+                        <img src="images/rsz_keri2.jpg"/>
+						<img src="images/rsz_keri2.png"/>
+                    </section>
+                </section>
+                
+                <section>
+					<h2>So what is TwentyTwenty.js?</h2>
+                    <ul>
+						<li>Shows the visual difference between two images</li>
+                    	<li>Brings images into focus, highlighting differences</li>
+						<li>Responsive and functional on all devices</li>
+                        <li>Doesn't require images to work</li>
+                    </ul>
+                </section>
+
+                <section>
+                	<section>
+						<h2>How does it work?</h2>
+                    	<ul>
+							<li>Download the plugin <a href="http://zurb.com/playground/twentytwenty" target="_blank">here</a></li>
+							<li>Unzip the twentytwenty-master.zip archive.</li>
+							<li>Copy the 'twentytwenty.css' file and move to your CSS folder. </li>
+							<li>Copy the 'jquery.twentytwenty.js' and 'jquery.event.move.js' files to your JS folder.</li>
+                    	</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li>Attach the css to the top of your HTML file.</li>
+						</ul>
+						<pre>
+                            <code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;TwentyTwenty.JS&lt;/title&gt;
+
+&lt;!-- CSS --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/styles.css&quot; /&gt;
+
+&lt;!-- JAVASCRIPT --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/twentytwenty.css&quot;&gt;
+
+&lt;!-- FONTS --&gt;
+&lt;link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'&gt;
+
+&lt;/head&gt;
+                            </code>
+						</pre>
+					</section>
+
+                    <section>
+                        <ul>
+                            <li>Attach the js files and latest jQuery CDN to the end of your HTML file before the closing body tag.</li>
+                        </ul>
+						<pre>
+                            <code>
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.event.move.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.twentytwenty.js&quot;&gt;&lt;/script&gt;
+                            </code>
+						</pre>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>Place your images in the appropriate folder and embed them inside a <code>&lt;div&gt;</code> within the body of your page.</li>
+                            <li>Adding the CSS class 'container' is optional for avoiding a Flash Of Unstyled Content (FOUC).</li>
+                            <li>The first image will be the before picture and the second image will be the after picture.</li>
+                        </ul>
+						<pre>
+                            <code>
+&lt;body&gt;
+&lt;div id=&quot;container&quot;&gt;
+
+&lt;img src=&quot;image/rsz_keri2.jpg&quot;/&gt;
+&lt;img src=&quot;image/rsz_keri2.png&quot;/&gt;
+
+&lt;/div&gt;
+                            </code>
+						</pre>
+                    </section>
+
+
+                 <section>
+                     <ul>
+                         <li>Attach the main container() function to the <code>&lt;div&gt;</code> element containing the images.</li>
+                         <li>Add a new <code>&lt;script&gt;</code> tag, inserting the following snippet of code between them.</li>
+                         <li>You can add the default_offset_pct option parameter to set where the drag handle appears by default, but this is optional.</li>
+                     </ul>
+						<pre>
+                            <code>
+&lt;script&gt;
+$(window).load(function()
+{
+$(&quot;#container&quot;).twentytwenty({default_offset_pct: 0.6});
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;                </code>
+						</pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <div>
+                        <h2>The Result</h2>
+                        <img src="images/twentyPic.png">
+                    </div>
+                </section>
+
+                 <section>
+                    <h2>CSS Used</h2>
+                    <pre>
+                        <code>
+html{
+    margin: 50px 50px;
+    padding: 0 0;
+}
+
+#container{
+    max-width: 300px;
+    margin: 10px auto;
+    background-color: #fff;
+    width: 720px;
+}
+
+.twentytwenty-before-label:before, .twentytwenty-after-label:before{
+    background: rgba(28, 23, 230, 0.3);
+}
+
+.twentytwenty-overlay:hover{
+    background: rgba(230, 198, 23, 0.5);
+}
+
+.twentytwenty-before-label:before{
+    content: &quot;PHOTO&quot;;
+}
+
+.twentytwenty-after-label:before{
+    content: 'NEGATIVE';
+}
+                	</code>
+                        </pre>
+                </section>
+
+                
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+        <script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || 'moon', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
